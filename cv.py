@@ -20,7 +20,8 @@ def education(doc):
         doc.append(bold("Cooper Union, New York, NY"))
         doc.append(NoEscape(r"\hfill May 2023"))
         doc.append(
-            "\nB.E. in Chemical Engineering, minors in Computer Science and Chemistry"
+            "\nB.E. in Chemical Engineering, "
+            "minors in Computer Science and Chemistry"
         )
         doc.append("\n- Advisor: Prof. Robert Topper")
         doc.append("\n- Department of Chemical Engineering")
@@ -30,14 +31,16 @@ def interests(doc):
     with doc.create(Section("Interests", numbering=False)):
         doc.append(
             "Data-driven materials discovery, High-throughput, Experimental "
-            "validation, Open-source development, DFT, Deep neural network potential"
+            "validation, Open-source development, DFT, Deep neural network "
+            "potential"
         )
 
 
 def awards(doc):
     with doc.create(Section("Awards", numbering=False)):
         doc.append(
-            "2023 American Chemical Society (ACS) New York Outstanding Student Award\n"
+            "2023 American Chemical Society (ACS) "
+            "New York Outstanding Student Award\n"
         )
         doc.append("2023 American Institute of Chemists (AIC) Student Award\n")
         doc.append("2022 Summer STEM Teaching Fellowship, Cooper Union\n")
@@ -50,11 +53,12 @@ def publications(doc):
     data = _load_json_file("data/publications.json")
     with doc.create(Section("Publications", numbering=False)):
         doc.append(
-            f"Google Scholar citations: {str(_get_google_scholar_citations())} "
+            f"Google Scholar citations: {str(_get_gscholar_citations())} "
             f"from {len(data)} peer-reviewed publications\n\n"
         )
         doc.append(
-            "‡ – these authors contributed equally to the work; * – corresponding author\n\n"
+            "‡ – these authors contributed equally to the work; "
+            "* – corresponding author\n\n"
         )
 
         # Enumerate and format each publication with numbering in reverse order
@@ -62,7 +66,9 @@ def publications(doc):
             doc.append(bold(f"{i}. {pub['title']}\n"))
             doc.append(", ".join(pub["authors"]) + "\n")
             doc.append(
-                _hyperlink(f"https://doi.org/{pub['doi']}", italic(pub["journal"]))
+                _hyperlink(
+                    f"https://doi.org/{pub['doi']}", italic(pub["journal"])
+                )
             )
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
@@ -71,12 +77,16 @@ def manuscript(doc):
     with doc.create(Section("Manuscripts submitted", numbering=False)):
         data = _load_json_file("data/manuscripts.json")
         data.sort(key=lambda x: x["date"], reverse=True)
-        for i, pub in enumerate(data, start=1):
-            doc.append(bold(f"{i}. {pub['title']}\n"))
-            doc.append(", ".join(pub["authors"]) + "\n")
-            if "doi" in pub and pub["doi"]:  # Check if DOI is present and not empty
+        for i, item in enumerate(data, start=1):
+            doc.append(bold(f"{i}. {item['title']}\n"))
+            doc.append(", ".join(item["authors"]) + "\n")
+            if (
+                "doi" in item and item["doi"]
+            ):  # Check if DOI is present and not empty
                 doc.append(
-                    _hyperlink(f"https://doi.org/{pub['doi']}", italic(pub["doi"]))
+                    _hyperlink(
+                        f"https://doi.org/{item['doi']}", italic(item["doi"])
+                    )
                 )
             # Add a new line if not the last publication
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
@@ -86,15 +96,15 @@ def presentation(doc):
     with doc.create(Section("Presentations", numbering=False)):
         data = _load_json_file("data/presentations.json")
         data.sort(key=lambda x: x["date"], reverse=True)
-        for i, presentation in enumerate(data, start=1):
-            doc.append(bold(f"{i}.{presentation['title']}\n"))
-            doc.append(f"{presentation['authors']}\n")
-            doc.append(NoEscape(r"\emph{" + presentation["conference"] + "}."))
+        for i, item in enumerate(data, start=1):
+            doc.append(bold(f"{i}.{item['title']}\n"))
+            doc.append(f"{item['authors']}\n")
+            doc.append(NoEscape(r"\emph{" + item["conference"] + "}."))
             doc.append(
-                f"\n {presentation['type']}, {presentation['location']}, {presentation['date']}. "
+                f"\n {item['type']}, {item['location']}, {item['date']}. "
             )
-            if "url" in presentation and presentation["url"]:
-                doc.append(_hyperlink(presentation["url"], "[pdf]"))
+            if "url" in item and item["url"]:
+                doc.append(_hyperlink(item["url"], "[pdf]"))
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
 
@@ -126,16 +136,19 @@ def _get_github_repo_stars(owner, repo):
 
 
 def _load_json_file(file_path):
+    """Load a JSON file and return the data."""
     with open(file_path, "r") as file:
         return json.load(file)
 
 
 def _hyperlink(url, text):
+    """Add a hpyerlink to the Latex text."""
     text = escape_latex(text)
     return NoEscape(r"\href{" + url + "}{" + text + "}")
 
 
-def _get_google_scholar_citations(author_id="L07HlVsAAAAJ"):
+def _get_gscholar_citations(author_id="L07HlVsAAAAJ"):
+    """Get the number of citations from Google Scholar."""
     author = scholarly.search_author_id(author_id)
     return author["citedby"]
 
@@ -146,11 +159,15 @@ if __name__ == "__main__":
     doc.packages.append(Package("hyperref"))
     doc.preamble.append(Command("date", NoEscape(r"\today")))
     doc.append(
-        NoEscape(r"\moveleft.5\hoffset\centerline{\large\bf Sangjoon (Bob) Lee}")
-    )  # Your name
+        NoEscape(
+            r"\moveleft.5\hoffset\centerline{\large\bf Sangjoon (Bob) Lee}"
+        )
+    )
     doc.append(
         NoEscape(
-            r"\moveleft.5\hoffset\centerline{\small sl5400@columbia.edu | \href{https://bobleesj.github.io/}{https://bobleesj.github.io/} | (404) 747-2468}"
+            r"\moveleft.5\hoffset\centerline{\small sl5400@columbia.edu "
+            r"|\href{https://bobleesj.github.io/}{bobleesj.github.io} "
+            r"|(404) 747-2468}"
         )
     )
 
@@ -162,9 +179,3 @@ if __name__ == "__main__":
     presentation(doc)
     software(doc)
     doc.generate_pdf("Sangjoon_Lee_CV", clean_tex=True)
-
-# Without NoEscape, you'd need to manually escape backslashes in Python strings.
-# With NoEscape, you can directly use LaTeX commands.
-# doc.append(NoEscape(r"\textbf{Bold Text}"))
-
-# doc.generate_pdf("sample", clean_tex=False)
