@@ -1,0 +1,23 @@
+[
+    {
+        "title": "cifkit: open-source Python package for high-throughput CIF analysis",
+        "journal": "Journal of Open Source Software",
+        "url": "https://github.com/bobleesj/cifkit",
+        "owner": "bobleesj",
+        "repo_name": "cifkit"
+    },
+    {
+        "title": "CIF Bond Analyzer (CBA)",
+        "journal": "Journal of Alloys and Compounds",
+        "url": "https://github.com/bobleesj/cif-bond-analyzer",
+        "owner": "bobleesj",
+        "repo_name": "cif-bond-analyzer"
+    },
+    {
+        "title": "Structure Analyzer/Featurizer (SAF)",
+        "journal": "Under review",
+        "url": "https://github.com/bobleesj/structure-analyzer-featurizer",
+        "owner": "bobleesj",
+        "repo_name": "structure-analyzer-featurizer"
+    }
+]

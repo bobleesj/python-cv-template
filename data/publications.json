@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Thermoelectric Materials Performance (zT) Predictions with Machine Learning",
+        "authors": ["N. K. Barua", "S. Lee", "A. O. Oliynyk", "H. Kleink*"],
+        "doi": "10.1021/acsami.4c19149",
+        "journal": "ACS Applied Materials & Interfaces",
+        "date": "2024-12"
+    },
+    {
+        "title": "cifkit: Python package for coordination geometry and atomic site analysis",
+        "authors": ["S. Lee*", "A. O. Oliynyk"],
+        "doi": "10.1021/acsami.4c19149",
+        "journal": "Journal of Open Source Software",
+        "date": "2024-11"
+    },
+    {
+        "title": "Machine learning descriptors in materials chemistry used in multiple experimentally validated studies: Oliynyk elemental property dataset",
+        "authors": ["S. Lee*", "C. Chen", "G. Garcia", "A. O. Oliynyk*"],
+        "doi": "10.1016/j.dib.2024.110178",
+        "journal": "Data in Brief",
+        "date": "2024-04"
+    },
+    {
+        "title": "The crystal and electronic structure of RE23Co6.7In20.3 (RE = Gd–Tm, Lu): A new structure type based on intergrowth of AlB2- and CsCl-type related slabs",
+        "authors": [
+            "Y. Tyvanchuk",
+            "V. Babizhetskyy",
+            "S. Baran",
+            "A. Szytula",
+            "V. Smetana",
+            "S. Lee",
+            "A. O. Oliynyk",
+            "A. Mudring*"
+        ],
+        "doi": "10.1021/acsami.4c19149",
+        "journal": "Journal of Alloys and Compounds",
+        "date": "2024-03"
+    },
+    {
+        "title": "Machine-learning prediction of thermal expansion coefficient for perovskite oxides with experimental validation",
+        "authors": [
+            "K. P. McGuinness",
+            "A. O. Oliynyk",
+            "S. Lee",
+            "B. Molero-Sanchez",
+            "P. K. Addo*"
+        ],
+        "doi": "10.1021/acsami.4c19149",
+        "journal": "Physical Chemistry Chemical Physics",
+        "date": "2023-11"
+    },
+    {
+        "title": "Electrospun nanofiber nerve guidance conduits for peripheral nerve regeneration: A review",
+        "authors": ["S. Lee", "M. Patel", "R. Patel*"],
+        "doi": "10.1016/j.eurpolymj.2022.111663",
+        "journal": "European Polymer Journal",
+        "date": "2022-12"
+    },
+    {
+        "title": "TransRot: A Portable Software Package for Simulated Annealing Monte Carlo Geometry Optimization of Atomic and Molecular Clusters",
+        "authors": ["R. Q. Topper*", "S. L. Topper", "S. Lee"],
+        "doi": "10.1021/bk-2022-1428.ch002",
+        "journal": "ACS Symposium Series",
+        "date": "2022-11"
+    }
+]
