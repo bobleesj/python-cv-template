@@ -10,11 +10,11 @@ Hence, this became my Winter 2024 personal project for automation and for the re
 
 Are you here too for similiar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word? You've come to the right place.
 
-I also considered the following features in designing:
+I also considered the following design principles:
 
-- **Dynamic:** Automated rendering in 1-2 seconds locally based on `.py` or `.json` changes.
-- **Customizable:** Anyone can use and build upon this CV template.
-- **Simple:** A single yet modular `cv.py` Python file and to make it easy to share via messaging apps and email, rather than as a `pip install` library.
+- **Fast:** automatically reload in 1-2 seconds when changes are made.
+- **Easy to customize:** build upon the current Bob's template.
+- **Easy to share:** a single yet well organized and modular `cv.py` script provided, easy to share share via messaging apps and email.
 
 ## Getting started
 
@@ -77,18 +77,18 @@ As shown shown in the gif file, I recommend using Visual Studio Code and downloa
 
 `cv.py` is the source of truth for the CV. If you want to add more entries, you just need to modifiy `.json` files under `data`.
 
-## How to get support
+## How to receive support
 
-- Want to request new features or have suggestions? Please make an issue!
+- Do you want to request new features or have suggestions? Please make an issue!
 - Have you encountered any problems? Please make an issue!
 - Do you need help customizing your CV? Feel free to reach out via email!
 - Have you encountered typos/grammatical errors? Make a pull request!
 
-## How to Show Support and Contribute
+## How to provide support
 
-- Did you find this project helpful? Please "star" the repository to encourage greater adoption!
-- Do you have colleagues and friends who might find this repository useful? Please share it with them!
-- Want to contribute to the code? When non-trivial changes are committed from a branch, please run `pre-commit` before creating a pull request:
+- Did you find this project helpful? Please "star" the repository to encourage greater word-of-mouth publicity!
+- Do you have colleagues and friends who might find this repository useful? Please share!
+- Would you like to contribute to the source code? When non-trivial changes are committed from a branch, please run `pre-commit` before creating a pull request:
 
 ```bash
 # Install pre-commit for automatic linting
