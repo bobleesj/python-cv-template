@@ -8,7 +8,7 @@ I was applying for PhD programs and needed to update my CV quite often. It was m
 
 Hence, this became my Winter 2024 personal project for automation and for the rest of my academic career.
 
-Are you here too for similiar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word? You've come to the right place.
+Are you here too for similar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word? You've come to the right place.
 
 I also considered the following design principles:
 
@@ -75,7 +75,7 @@ As shown shown in the gif file, I recommend using Visual Studio Code and downloa
 
 ## How to customize my CV?
 
-`cv.py` is the source of truth for the CV. If you want to add more entries, you just need to modifiy `.json` files under `data`.
+`cv.py` is the source of truth for the CV. If you want to add more entries, you just need to modify `.json` files under `data`.
 
 ## How to receive support
 
