@@ -4,22 +4,23 @@
 
 ## What urged me to create this repository
 
-I was applying for PhD programs and needed to update my CV quite often. I envisioned a tool that could (1) dynamically parse information such as Google Scholar citations and GitHub star counts, (2) render exactly as I wanted instead of a rigid template, (3) automate rendering for previews. Hence, this became my Winter 2024 personal project for automation and ease the rest of my academic career.
+I was applying for PhD programs and needed to update my CV quite often. It was manageable yet tedious. I wanted to (1) dynamically parse information such as Google Scholar citations and GitHub star counts, (2) maintain the previous CV format instead of a rigid template, (3) automate rendering with side-by-side previews.
 
-Are you here too for similiar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word?
+Hence, this became my Winter 2024 personal project for automation and ease the rest of my academic career.
+
+Are you here too for similiar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word? You've come to the right place.
 
 I also considered the following features in designing:
 
 - **Dynamic:** Automated rendering in 1-2 seconds locally based on `.py` or `.json` changes.
-- **Offline:** No internet connection needed to update while on a plane.
 - **Customizable:** Anyone can use and build upon this CV template.
-- **Simple:** Modular yet retains a single `cv.py` Python file and a `data` folder for easy sharing via chat and email, rather than as a `pip install` library.
+- **Simple:** A single yet modular `cv.py` Python file and to make it easy to share via messaging apps and email, rather than as a `pip install` library.
 
 ## Getting started
 
 It will take about 1-2 minutes to generate `Sangjoon_Lee_CV.pdf`.
 
-After that, it will take 2-3 seconds to render your CV in real-time.
+After that, it will take 2-3 seconds to render your CV in real-time.****
 
 ### Step 1: Install dependencies
 
@@ -56,7 +57,11 @@ python cv.py
 
 ## Step 3: How to render dynamically (optional, but recommended)
 
-Like Overleaf, we want to dynamically render each time the `.json` or `.py` files are modified.
+Like Overleaf, we want to dynamically render each time the `.json` or `.py` files are modified as shown below:
+
+![Dynamically render you CV](img/dynamic-render-demo.gif)
+
+Run the following two commands.
 
 ```bash
 # Install nodemon
@@ -66,9 +71,7 @@ npm install -g nodemon
 nodemon --exec python cv.py --watch . --ext py,json
 ```
 
-![Dynamically render you CV](img/dynamic-render-demo.gif)
-
-As shown above, I recommend using Visual Studio Code and downloading a PDF preview extension. Your CV will be rendered in just 1-2 seconds!
+As shown shown in the gif file, I recommend using Visual Studio Code and downloading a PDF preview extension. Your CV will be rendered in just 1-2 seconds!
 
 ## How to customize my CV?
 
