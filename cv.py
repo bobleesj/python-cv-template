@@ -1,14 +1,14 @@
 import json
 
 import requests
-from pylatex import Command, Document, Package, Section
+from pylatex import Document, Package, Section
 from pylatex.utils import NoEscape, bold, escape_latex, italic
 from scholarly import scholarly
 
 
 def education(doc):
     with doc.create(Section("Education", numbering=False)):
-        # Colubmia
+        # Colubmia University
         doc.append(bold("Columbia University, New York, NY"))
         doc.append(NoEscape(r"\hfill May 2025"))
         doc.append("\nM.S. in Materials Science and Engineering")
@@ -46,11 +46,11 @@ def awards(doc):
         doc.append("2022 Summer STEM Teaching Fellowship, Cooper Union\n")
         doc.append("4-Year Half-tuition Merit Scholarship, Cooper Union\n")
         doc.append("4-Year Innovator’s Merit Scholarship, Cooper Union\n")
-        doc.append("4-Year Corporate Scholarship, Donghwa Enterprise ")
+        doc.append("4-Year Corporate Scholarship, Donghwa Enterprise")
 
 
 def publications(doc):
-    data = _load_json_file("data/publications.json")
+    data = _load_json_file_date("data/publications.json")
     with doc.create(Section("Publications", numbering=False)):
         doc.append(
             f"Google Scholar citations: {str(_get_gscholar_citations())} "
@@ -73,10 +73,9 @@ def publications(doc):
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
 
-def manuscript(doc):
+def manuscripts(doc):
     with doc.create(Section("Manuscripts submitted", numbering=False)):
-        data = _load_json_file("data/manuscripts.json")
-        data.sort(key=lambda x: x["date"], reverse=True)
+        data = _load_json_file_date("data/manuscripts.json")
         for i, item in enumerate(data, start=1):
             doc.append(bold(f"{i}. {item['title']}\n"))
             doc.append(", ".join(item["authors"]) + "\n")
@@ -92,14 +91,13 @@ def manuscript(doc):
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
 
-def presentation(doc):
+def presentations(doc):
     with doc.create(Section("Presentations", numbering=False)):
-        data = _load_json_file("data/presentations.json")
-        data.sort(key=lambda x: x["date"], reverse=True)
+        data = _load_json_file_date("data/presentations.json")
         for i, item in enumerate(data, start=1):
             doc.append(bold(f"{i}.{item['title']}\n"))
             doc.append(f"{item['authors']}\n")
-            doc.append(NoEscape(r"\emph{" + item["conference"] + "}."))
+            doc.append(NoEscape(r"\emph{" + item["conference"] + "}"))
             doc.append(
                 f"\n {item['type']}, {item['location']}, {item['date']}. "
             )
@@ -110,7 +108,7 @@ def presentation(doc):
 
 def software(doc):
     with doc.create(Section("Research software", numbering=False)):
-        data = _load_json_file("data/software.json")
+        data = _load_json_file_date("data/software.json", sorted_by_date=False)
         for i, software in enumerate(data, start=1):
             doc.append(bold(f"{i}. {software['title']}"))
             doc.append("\n")
@@ -122,42 +120,50 @@ def software(doc):
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
 
-def _add_extra_line_break_if_not_last_item(data, i):
+def _add_extra_line_break_if_not_last_item(data: dict, i: int) -> str:
     if i != len(data):
         return "\n\n"
     return ""
 
 
-def _get_github_repo_stars(owner, repo):
+def _get_github_repo_stars(owner: str, repo: str) -> int:
+    "Get the number of stars for a GitHub repository."
     url = f"https://api.github.com/repos/{owner}/{repo}"
     response = requests.get(url)
     data = response.json()
     return data["stargazers_count"]
 
 
-def _load_json_file(file_path):
+def _load_json_file_date(file_path: str, sorted_by_date=True) -> dict:
     """Load a JSON file and return the data."""
     with open(file_path, "r") as file:
-        return json.load(file)
+        data = json.load(file)
+        if sorted_by_date:
+            data.sort(key=lambda x: x["date"], reverse=True)
+
+        return data
 
 
-def _hyperlink(url, text):
+def _hyperlink(url: str, text: str) -> NoEscape:
     """Add a hpyerlink to the Latex text."""
     text = escape_latex(text)
     return NoEscape(r"\href{" + url + "}{" + text + "}")
 
 
-def _get_gscholar_citations(author_id="L07HlVsAAAAJ"):
+def _get_gscholar_citations(author_id="L07HlVsAAAAJ") -> int:
     """Get the number of citations from Google Scholar."""
     author = scholarly.search_author_id(author_id)
     return author["citedby"]
 
 
 if __name__ == "__main__":
+    # Set the geometry options for the document
     geometry_options = {"tmargin": "0.5in", "lmargin": "1.0in"}
     doc = Document("basic", geometry_options=geometry_options)
+    # Required to use hyperlinks when rendered as a pdf
     doc.packages.append(Package("hyperref"))
-    doc.preamble.append(Command("date", NoEscape(r"\today")))
+
+    # Header (Name, email, phone number)
     doc.append(
         NoEscape(
             r"\moveleft.5\hoffset\centerline{\large\bf Sangjoon (Bob) Lee}"
@@ -171,11 +177,14 @@ if __name__ == "__main__":
         )
     )
 
+    # Sections
     education(doc)
     interests(doc)
     awards(doc)
-    manuscript(doc)
+    manuscripts(doc)
     publications(doc)
-    presentation(doc)
+    presentations(doc)
     software(doc)
+
+    # Generate the PDF
     doc.generate_pdf("Sangjoon_Lee_CV", clean_tex=True)

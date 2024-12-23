@@ -7,6 +7,13 @@
     "date": "2024-12"
   },
   {
+    "title": "Thermoelectric Materials Performance (zT) Predictions with Machine Learning",
+    "authors": ["N. K. Barua", "S. Lee", "A. O. Oliynyk", "H. Kleink*"],
+    "doi": "10.1021/acsami.4c19149",
+    "journal": "ACS Applied Materials & Interfaces",
+    "date": "2024-12"
+  },
+  {
     "title": "cifkit: Python package for coordination geometry and atomic site analysis",
     "authors": ["S. Lee*", "A. O. Oliynyk"],
     "doi": "10.1021/acsami.4c19149",

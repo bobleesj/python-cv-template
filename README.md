@@ -1,4 +1,4 @@
-# Welcome to Python CV Template
+# Welcome to Bob's Python CV Template
 
 ## Motivation
 
@@ -63,5 +63,19 @@ Please clone and fork the repository. Once changes are committed from a branch, 
 pip install pre-commit
 
 # Run pre-commit to standard the code
-pre-commit --run-all-files
+pre-commit run --all-files
 ```
+
+## How to do dynamic re-rendering
+
+I am comfortable with this. How do I render the PDF each time my python or json is modified?
+
+```python
+# Install nodemon
+npm install -g nodemon
+
+# Run the following
+nodemon --exec python cv.py --watch . --ext py,json
+```
+
+I recommend using `Visual Studio Code` and download PDF preview extension for you to dynamically render your CV!
