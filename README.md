@@ -6,7 +6,7 @@
 
 I was applying for PhD programs and needed to update my CV quite often. It was manageable yet tedious. I wanted to (1) dynamically parse information such as Google Scholar citations and GitHub star counts, (2) maintain the previous CV format instead of a rigid template, (3) automate rendering with side-by-side previews.
 
-Hence, this became my Winter 2024 personal project for automation and ease the rest of my academic career.
+Hence, this became my Winter 2024 personal project for automation and for the rest of my academic career.
 
 Are you here too for similiar reasons? Are you tired of managing your CV using Overleaf or Microsoft Word? You've come to the right place.
 
