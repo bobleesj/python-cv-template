@@ -14,7 +14,7 @@ I also considered the following design principles:
 
 - **Fast:** automatically reload in 1-2 seconds when changes are made.
 - **Easy to customize:** build upon the current Bob's template.
-- **Easy to share:** a single yet well organized and modular `cv.py` script provided, easy to share share via messaging apps and email.
+- **Easy to share:** a single yet well organized and modular `cv.py` script provided, easy to share via messaging apps and email.
 
 ## Getting started
 
