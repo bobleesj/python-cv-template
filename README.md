@@ -20,7 +20,7 @@ I also considered the following features in designing:
 
 It will take about 1-2 minutes to generate `Sangjoon_Lee_CV.pdf`.
 
-After that, it will take 2-3 seconds to render your CV in real-time.****
+After that, it will take 2-3 seconds to render your CV in real-time.
 
 ### Step 1: Install dependencies
 
@@ -75,7 +75,7 @@ As shown shown in the gif file, I recommend using Visual Studio Code and downloa
 
 ## How to customize my CV?
 
-`cv.py` is the source of truth for the CV. If you want to add more entries, you just need to modifiy `data`
+`cv.py` is the source of truth for the CV. If you want to add more entries, you just need to modifiy `.json` files under `data`.
 
 ## How to get support
 
