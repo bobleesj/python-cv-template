@@ -1,38 +1,38 @@
 [
-    {
-        "authors": "S. Lee, N. K. Barua, O. Oliynyk",
-        "title": "High-throughput Crystal Structure Featurizer for Binary and Ternary Compounds",
-        "conference": "Gordon Research Conference (GRC) Solid State Chemistry",
-        "type": "Poster",
-        "location": "New London, NH",
-        "date": "July 2024",
-        "url": "https://bobleesj.github.io/files/presentation/2024-GRC-poster.pdf"
-    },
-    {
-        "authors": "S. Lee, A. O. Oliynyk",
-        "title": "Machine-learned Features to Solve Crystal Structure Classification Problems",
-        "conference": "ACS Northeast Regional Meeting (NERM) 2022, Computational Tools for Materials Science",
-        "type": "Oral",
-        "location": "Rochester, NY",
-        "date": "October 2022",
-        "url": "https://bobleesj.github.io/files/presentation/2022-ACS-NERM-slides.pdf"
-    },
-    {
-        "authors": "S. Lee, S. L. Topper, R. Q. Topper",
-        "title": "TransRot: a Portable and Easy-to-Use Open Source Software Package for Simulated Annealing Monte Carlo Geometry Optimization of Nanoparticles",
-        "conference": "Molecular Quantum Mechanics (MQM) 2022",
-        "type": "Poster",
-        "location": "University of Virginia",
-        "date": "June 2022",
-        "url": "https://bobleesj.github.io/files/presentation/2022-MQM-poster.pdf"
-    },
-    {
-        "authors": "S. Lee, R. Q. Topper, S. L. Topper",
-        "title": "Mag-Walking Simulated Annealing Monte Carlo Study of Nano-solvated Ammonium Chloride",
-        "conference": "ACS New York 69th Annual Undergraduate Research Symposium 2022",
-        "type": "Oral",
-        "location": "Virtual due to COVID-19",
-        "date": "May 2022",
-        "url": "https://bobleesj.github.io/files/presentation/2022-ACS-NY-URS-slides.pdf"
-    }
+  {
+    "authors": "S. Lee, N. K. Barua, O. Oliynyk",
+    "title": "High-throughput Crystal Structure Featurizer for Binary and Ternary Compounds",
+    "conference": "Gordon Research Conference (GRC) Solid State Chemistry",
+    "type": "Poster",
+    "location": "New London, NH",
+    "date": "July 2024",
+    "url": "https://bobleesj.github.io/files/presentation/2024-GRC-poster.pdf"
+  },
+  {
+    "authors": "S. Lee, A. O. Oliynyk",
+    "title": "Machine-learned Features to Solve Crystal Structure Classification Problems",
+    "conference": "ACS Northeast Regional Meeting (NERM) 2022, Computational Tools for Materials Science",
+    "type": "Oral",
+    "location": "Rochester, NY",
+    "date": "October 2022",
+    "url": "https://bobleesj.github.io/files/presentation/2022-ACS-NERM-slides.pdf"
+  },
+  {
+    "authors": "S. Lee, S. L. Topper, R. Q. Topper",
+    "title": "TransRot: a Portable and Easy-to-Use Open Source Software Package for Simulated Annealing Monte Carlo Geometry Optimization of Nanoparticles",
+    "conference": "Molecular Quantum Mechanics (MQM) 2022",
+    "type": "Poster",
+    "location": "University of Virginia",
+    "date": "June 2022",
+    "url": "https://bobleesj.github.io/files/presentation/2022-MQM-poster.pdf"
+  },
+  {
+    "authors": "S. Lee, R. Q. Topper, S. L. Topper",
+    "title": "Mag-Walking Simulated Annealing Monte Carlo Study of Nano-solvated Ammonium Chloride",
+    "conference": "ACS New York 69th Annual Undergraduate Research Symposium 2022",
+    "type": "Oral",
+    "location": "Virtual due to COVID-19",
+    "date": "May 2022",
+    "url": "https://bobleesj.github.io/files/presentation/2022-ACS-NY-URS-slides.pdf"
+  }
 ]

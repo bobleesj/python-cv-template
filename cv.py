@@ -1,14 +1,10 @@
-from pylatex import (
-    Document,
-    Section,
-    Command,
-)
-from pylatex import Command, Document, Section
-from pylatex.utils import NoEscape, italic, bold, escape_latex
-from pylatex import Package
 import json
+
 import requests
+from pylatex import Command, Document, Package, Section
+from pylatex.utils import NoEscape, bold, escape_latex, italic
 from scholarly import scholarly
+
 
 def education(doc):
     with doc.create(Section("Education", numbering=False)):
@@ -53,12 +49,14 @@ def awards(doc):
 def publications(doc):
     data = _load_json_file("data/publications.json")
     with doc.create(Section("Publications", numbering=False)):
-        doc.append(f"Google Scholar citations: {str(_get_google_scholar_citations())} "
-                   f"from {len(data)} peer-reviewed publications\n\n")
+        doc.append(
+            f"Google Scholar citations: {str(_get_google_scholar_citations())} "
+            f"from {len(data)} peer-reviewed publications\n\n"
+        )
         doc.append(
             "‡ – these authors contributed equally to the work; * – corresponding author\n\n"
         )
-        
+
         # Enumerate and format each publication with numbering in reverse order
         for i, pub in enumerate(data, start=1):
             doc.append(bold(f"{i}. {pub['title']}\n"))
@@ -88,13 +86,15 @@ def presentation(doc):
     with doc.create(Section("Presentations", numbering=False)):
         data = _load_json_file("data/presentations.json")
         data.sort(key=lambda x: x["date"], reverse=True)
-        for i, pres in enumerate(data, start=1):
-            doc.append(bold(f"{i}.{pres['title']}\n"))
-            doc.append(f"{pres['authors']}\n")
-            doc.append(NoEscape(r"\emph{" + pres["conference"] + "}."))
-            doc.append(f"\n {pres['type']}, {pres['location']}, {pres['date']}. ")
-            if "url" in pres and pres["url"]:
-                doc.append(_hyperlink(pres["url"], "[pdf]"))
+        for i, presentation in enumerate(data, start=1):
+            doc.append(bold(f"{i}.{presentation['title']}\n"))
+            doc.append(f"{presentation['authors']}\n")
+            doc.append(NoEscape(r"\emph{" + presentation["conference"] + "}."))
+            doc.append(
+                f"\n {presentation['type']}, {presentation['location']}, {presentation['date']}. "
+            )
+            if "url" in presentation and presentation["url"]:
+                doc.append(_hyperlink(presentation["url"], "[pdf]"))
             doc.append(_add_extra_line_break_if_not_last_item(data, i))
 
 
@@ -116,6 +116,7 @@ def _add_extra_line_break_if_not_last_item(data, i):
     if i != len(data):
         return "\n\n"
     return ""
+
 
 def _get_github_repo_stars(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}"
@@ -160,7 +161,7 @@ if __name__ == "__main__":
     publications(doc)
     presentation(doc)
     software(doc)
-    doc.generate_pdf("Sangjoon_Lee_CV", clean_tex=False)
+    doc.generate_pdf("Sangjoon_Lee_CV", clean_tex=True)
 
 # Without NoEscape, you'd need to manually escape backslashes in Python strings.
 # With NoEscape, you can directly use LaTeX commands.
