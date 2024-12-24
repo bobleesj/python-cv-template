@@ -1,28 +1,27 @@
 [
-      {
-        "title": "Department Representative",
-        "org": "Columbia Engineering Graduate Student Council",
-        "duration": "Fall 2024"
-      },
-      {
-        "title": "President",
-        "org": "National Chemical Engineering Honor Society (OXE), Cooper Union chapter",
-        "duration": "2022-23"
-      },
-      {
-        "title": "Founder & President",
-        "org": "Cooper Union Undergraduate Research Club",
-        "duration": "2022-23"
-      },
-      {
-        "title": "Treasurer",
-        "org": "American Institute of Chemical Engineers (AIChE), Cooper Union chapter",
-        "duration": "2022-23"
-      },
-      {
-        "title": "Department Representative",
-        "org": "Cooper Union Engineering Student Council",
-        "duration": "2015-16"
-      }
+  {
+    "title": "Department Representative",
+    "org": "Columbia Engineering Graduate Student Council",
+    "duration": "Fall 2024"
+  },
+  {
+    "title": "President",
+    "org": "National Chemical Engineering Honor Society (OXE), Cooper Union chapter",
+    "duration": "2022-23"
+  },
+  {
+    "title": "Founder & President",
+    "org": "Cooper Union Undergraduate Research Club",
+    "duration": "2022-23"
+  },
+  {
+    "title": "Treasurer",
+    "org": "American Institute of Chemical Engineers (AIChE), Cooper Union chapter",
+    "duration": "2022-23"
+  },
+  {
+    "title": "Department Representative",
+    "org": "Cooper Union Engineering Student Council",
+    "duration": "2015-16"
+  }
 ]
-  

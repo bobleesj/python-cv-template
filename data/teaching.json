@@ -1,20 +1,20 @@
 [
-    {
-        "title": "Undergraduate Teaching Assistant",
-        "symbol": "EID 101",
-        "name": "Engineering Design and Problem Solving",
-        "duration": "Fall 2022",
-        "info": "3-credit course",
-        "org": "Cooper Union",
-        "location": "New York, NY"
-    },
-    {
-        "title": "STEM Teaching Fellow & Lead Course Instructor",
-        "symbol": "STEM 22-11",
-        "name": "Computer-Aided Drug Design",
-        "duration": "Summer 2022",
-        "info": "20 hours a week, 6 weeks total",
-        "org": "Cooper Union",
-        "location": "New York, NY"
-    }
+  {
+    "title": "Undergraduate Teaching Assistant",
+    "symbol": "EID 101",
+    "name": "Engineering Design and Problem Solving",
+    "duration": "Fall 2022",
+    "info": "3-credit course",
+    "org": "Cooper Union",
+    "location": "New York, NY"
+  },
+  {
+    "title": "STEM Teaching Fellow & Lead Course Instructor",
+    "symbol": "STEM 22-11",
+    "name": "Computer-Aided Drug Design",
+    "duration": "Summer 2022",
+    "info": "20 hours a week, 6 weeks total",
+    "org": "Cooper Union",
+    "location": "New York, NY"
+  }
 ]
