@@ -1,5 +1,19 @@
 [
   {
+    "title": "diffpy.utils: portable objects for scattering, neutron, x-ray diffraciton data",
+    "journal": "",
+    "url": "https://github.com/diffpy/diffpy.utils",
+    "owner": "diffpy",
+    "repo_name": "diffpy.utils"
+  },
+  {
+    "title": "bg-cookieecut: a Python package standard and generator for scientific code",
+    "journal": "",
+    "url": "https://github.com/Billingegroup/cookiecutter",
+    "owner": "Billingegroup",
+    "repo_name": "cookiecutter"
+  },
+  {
     "title": "cifkit: open-source Python package for high-throughput CIF analysis",
     "journal": "Journal of Open Source Software",
     "url": "https://github.com/bobleesj/cifkit",
